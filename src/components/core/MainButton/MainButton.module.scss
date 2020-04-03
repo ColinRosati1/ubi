@@ -1,0 +1,17 @@
+@import 'src/styles/colors';
+
+.button {
+  height: 4rem;
+  font-size: 3rem;
+  border: 1px solid $tunaBlack;
+  border-radius: 4px;
+  padding: 6px 40px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin: 0;
+  &:hover {
+    color: $tunaBlack;
+    box-shadow: 0 0 5px #919191de;
+  }
+}

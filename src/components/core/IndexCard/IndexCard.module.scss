@@ -1,11 +1,72 @@
-.wrapper{
-    width:40rem;
-    padding:2rem;
-    margin:5rem;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius:5px;
-    box-shadow: 2px 1px 10px rgba(0,0,0,0.1);
+@import 'src/styles/mixins';
+@import 'src/styles/colors';
+
+.wrapper {
+  @include flexContainer(column, flex-start, right);
+  font-size: 1.8rem;
+  width: 75rem;
+  padding: 2rem;
+  margin: 1rem;
+  border: 15px solid $black;
+  box-shadow: 2px 2px 5px rgba($tunaBlack, 0.1);
+  background: $white;
+  color: $redPrimary;
+  z-index: 100;
+}
+
+.header {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-basis: 100%;
+  text-transform: uppercase;
+  font-variant: small-caps;
+}
+
+.dates {
+  align-self: center;
+  display: inline-flex;
+  min-width: 56rem;
+  padding: 1rem;
+  background: $tunaBlack;
+  color: $redPrimary;
+  .item {
+    border-top: 5px solid $white;
+    border-left: 5px solid $white;
+    padding: 1rem 2rem;
+    color: $redPrimary;
+  }
+  > .item:first-child {
+    padding-right: 9rem;
+  }
+}
+
+.title {
+  margin: 0px 0 1.5rem;
+  margin-top: 0;
+  align-self: center;
+  font-size: 10rem;
+  line-height: 0.8;
+}
+
+h3 {
+  margin-top: 0;
+  align-self: center;
+}
+
+p {
+  margin: -5px;
+  line-height: 5rem;
+  font-size: 5rem;
+  color: $black;
+}
+
+.item {
+  font-size: 6rem;
+  margin-bottom: 4px;
+  line-height: 5rem;
+}
+.item2 {
+  font-size: 1.8rem;
+  line-height: 3rem;
 }
