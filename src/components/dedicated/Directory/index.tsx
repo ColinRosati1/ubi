@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import styles from './Body.module.scss';
+import styles from './Directory.module.scss';
 
-import IndexWrapper from '../IndexWrapper';
+import IndexWrapper from './IndexWrapper';
 
 const Body: FC = () => {
   return (

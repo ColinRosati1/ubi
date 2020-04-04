@@ -1,15 +1,16 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import styles from './App.module.scss'
-
-import Background from './components/dedicated/Directory/Background'
-import Body from './components/dedicated/Directory/Body'
+import Directory from './components/dedicated/Directory';
+import IndexBody from './components/dedicated/Index/IndexBody';
 
 function App() {
   return (
-    <div className={styles.Wrapper}>
-      <Background/>
-      <Body/>
+    <div>
+      <Switch>
+        <Route exact path="/directory" component={Directory}></Route>
+        <Route path="/" component={IndexBody}></Route>
+      </Switch>
     </div>
   );
 }
