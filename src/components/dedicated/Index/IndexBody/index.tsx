@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import cx from 'classnames';
 
 import styles from './IndexBody.module.scss';
 
@@ -28,10 +29,8 @@ const backgroungText = [
 ];
 
 const IndexBody: FC = () => {
-  const el = document.querySelector('IndexBody');
-  console.log(el);
   return (
-    <div className={styles.wrapper}>
+    <div className={cx(styles.wrapper)} id={'index'}>
       {backgroungText.map((items, index) => {
         return (
           <Link to="/directory" key={index}>
