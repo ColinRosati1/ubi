@@ -5,6 +5,7 @@ import styles from './Directory.module.scss';
 import IndexWrapper from './IndexWrapper';
 
 import MainButton from '../../core/MainButton';
+import SearchWrapper from './SearchWrapper';
 
 const Body: FC = () => {
   return (
@@ -12,6 +13,7 @@ const Body: FC = () => {
       <Link to="/">
         <MainButton label={'home'} />
       </Link>
+      <SearchWrapper />
       <IndexWrapper />
     </div>
   );

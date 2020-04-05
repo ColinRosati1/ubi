@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import styles from './IndexWrapper.module.scss';
 
 import IndexCard from '../../../core/IndexCard';
 import { universalBasicIncomeCases } from '../../../../constants/universalBasicIncomeCases';
 
-export default function IndexWrapper() {
+const IndexWrapper: FC = () => {
   const entries = universalBasicIncomeCases();
   return (
     <div className={styles.wrapper}>
@@ -14,4 +14,6 @@ export default function IndexWrapper() {
       ))}
     </div>
   );
-}
+};
+
+export default IndexWrapper;

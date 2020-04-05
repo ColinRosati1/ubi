@@ -1,6 +1,12 @@
+@import 'src/styles/colors';
+
 @mixin flexBox {
   display: flex;
   flex-wrap: wrap;
+}
+
+body {
+  background-color: black;
 }
 
 .wrapper {
@@ -24,4 +30,5 @@ a {
   margin-left: -20px;
   line-height: 0.7;
   letter-spacing: -13px;
+  mix-blend-mode: color-dodge;
 }
