@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import styles from './IndexCard.module.scss';
 import { ItemCardProps } from './types';
-import MainButton from '../MainButton';
+import MainButton from 'components/core/MainButton';
 
 const IndexCard: FC<ItemCardProps> = ({
   endDate,

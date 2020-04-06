@@ -1,48 +1,51 @@
-import React, { FC, MouseEvent } from 'react';
+import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Button from '@material-ui/core/Button';
+
 import styles from './SearchItems.module.scss';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 250,
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(5),
   },
 }));
 
 const SearchItems: FC = () => {
   const classes = useStyles();
-  // const [age, setAge] = React.useState('EventTarget');
-
-  const handleChange = (event: MouseEvent) => {
-    console.log(event.currentTarget);
-    event.preventDefault();
-    // setAge(event.currentTarget);
+  const [filter, setFilter] = React.useState('EventTarget');
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    console.log(filter);
+    setFilter(event.target.value as string);
   };
 
   return (
     <div className={styles.wrapper}>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Sort</InputLabel>
+        <InputLabel htmlFor="age-native-simple">Sort</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={'Sort'}
-          type={'visible'}
-          onClick={handleChange}
+          native
+          onChange={handleChange}
+          inputProps={{
+            name: 'Sort',
+            id: 'age-native-simple',
+          }}
         >
-          <MenuItem value={'Location'}>Location</MenuItem>
-          <MenuItem value={'Length'}>Length</MenuItem>
-          <MenuItem value={'Income'}>Income</MenuItem>
+          <option aria-label="None" value="" />
+          <option value={'Location'}>Location</option>
+          <option value={'Length'}>Length</option>
+          <option value={'Income'}>Income</option>
         </Select>
       </FormControl>
+      <Button variant="outlined" style={{ marginTop: '1rem' }}>
+        Search
+      </Button>
     </div>
   );
 };

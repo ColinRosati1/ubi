@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 
 import styles from './IndexWrapper.module.scss';
 
-import IndexCard from '../../../core/IndexCard';
-import { universalBasicIncomeCases } from '../../../../constants/universalBasicIncomeCases';
+import IndexCard from 'components/core/IndexCard';
+import { universalBasicIncomeCases } from 'constants/universalBasicIncomeCases';
 
 const IndexWrapper: FC = () => {
   const entries = universalBasicIncomeCases();
