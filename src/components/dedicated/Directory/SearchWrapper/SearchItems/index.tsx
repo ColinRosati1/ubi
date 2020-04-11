@@ -28,15 +28,8 @@ const SearchItems: FC = () => {
   return (
     <div className={styles.wrapper}>
       <FormControl className={classes.formControl}>
-        <InputLabel htmlFor="age-native-simple">Sort</InputLabel>
-        <Select
-          native
-          onChange={handleChange}
-          inputProps={{
-            name: 'Sort',
-            id: 'age-native-simple',
-          }}
-        >
+        <InputLabel>Sort</InputLabel>
+        <Select native onChange={handleChange}>
           <option aria-label="None" value="" />
           <option value={'Location'}>Location</option>
           <option value={'Length'}>Length</option>

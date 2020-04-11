@@ -1,15 +1,19 @@
 export type UBIMeta = {
-    title?: string;
-    isActive?: boolean;
-    label?: string;
-    organization?: string;
-    funding?: string;
-    income?: string;
-    location?: string;
-    startDate?: string;
-    endDate?: string
-}
+  effects?: string;
+  endDate?: string;
+  funding?: string;
+  income?: string;
+  incomeType?: string;
+  isActive?: boolean;
+  label?: string;
+  location?: string;
+  organization?: string;
+  sample?: string;
+  sampleAge?: string;
+  startDate?: string;
+  title?: string;
+};
 
 export type UBIType = {
-    [code: string]: UBIMeta;
-}
+  [code: string]: UBIMeta;
+};

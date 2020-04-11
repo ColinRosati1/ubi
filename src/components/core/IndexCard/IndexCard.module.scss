@@ -3,37 +3,42 @@
 
 .wrapper {
   @include flexContainer(flex-start, right, column);
-  font-size: 1.8rem;
-  width: 75rem;
-  padding: 2rem;
-  border: 4px solid $black;
-  box-shadow: 2px 2px 5px rgba($tunaBlack, 0.1);
+  max-width: 70rem;
+  width: 100%;
+  padding: 5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 -3px 4px rgba($tunaBlack, 0.1);
   background: $white;
   color: $redPrimary;
   z-index: 100;
+  font-weight: 500;
+  .body {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 3rem 0 0;
+  }
 }
 
 .header {
   width: 100%;
   display: inline-flex;
-  justify-content: space-around;
-  flex-basis: 100%;
+  justify-content: space-between;
   text-transform: uppercase;
-  font-variant: small-caps;
 }
 
 .dates {
   align-self: center;
   display: inline-flex;
-  min-width: 56rem;
+  min-width: 97%;
+  margin-top: 2rem;
   padding: 1rem;
-  background: $tunaBlack;
-  color: $redPrimary;
+  background: $black;
   .item {
     border-top: 5px solid $white;
     border-left: 5px solid $white;
     padding: 1rem 2rem;
-    color: $redPrimary;
+    color: $white;
+    padding-right: 9rem;
   }
   > .item:first-child {
     padding-right: 9rem;
@@ -44,7 +49,7 @@
   margin: 0px 0 1.5rem;
   margin-top: 0;
   align-self: center;
-  font-size: 10rem;
+  font-size: 1.5rem;
   line-height: 0.8;
 }
 
@@ -54,18 +59,35 @@ h3 {
 }
 
 p {
-  margin: -5px;
-  line-height: 5rem;
-  font-size: 5rem;
+  margin: 0;
   color: $black;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 3rem;
 }
 
 .item {
-  font-size: 6rem;
+  text-align: center;
+  font-size: 1.3rem;
   margin-bottom: 4px;
-  line-height: 5rem;
+  padding-bottom: 1.3rem;
 }
-.item2 {
-  font-size: 1.8rem;
-  line-height: 3rem;
+
+hr {
+  border: 1px solid $black;
+  width: 100%;
+}
+
+.category {
+  margin-right: 2rem;
+  width: 25%;
+  p {
+    display: inline;
+    margin: auto;
+  }
+}
+
+.categoryWrapper {
+  display: flex;
+  width: 70%;
 }
