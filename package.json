@@ -1,6 +1,6 @@
 {
   "name": "ubi",
-  "homepage": "https://colinrosati1.github.io/ubi/",
+  "homepage": "https://colinrosati1.github.io/ubi/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
