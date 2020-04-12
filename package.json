@@ -1,6 +1,6 @@
 {
   "name": "ubi",
-  "homepage": "https://colinrosati1.github.io/ubi/build",
+  "homepage": "https://colinrosati1.github.io/ubi/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "clean": "rm -rf node_modules/gh-pages/.cache",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
