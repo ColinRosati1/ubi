@@ -8,25 +8,29 @@ import IndexWrapper from 'components/dedicated/Directory/IndexWrapper';
 import MainButton from 'components/core/MainButton';
 import SearchWrapper from 'components/dedicated/Directory/SearchWrapper';
 
-import { State } from 'types';
-import { universalBasicIncomeCases } from 'constants/universalBasicIncomeCases';
-const entries = universalBasicIncomeCases();
+import { StoreState } from 'store/reducers';
+import { Ubi } from 'store/actions';
 
-const mapStateToProps = (state: State): State => ({
-  UBIScenarios: Object.entries(entries),
-});
+interface AppProps {
+  ubiList: Ubi;
+  fetchUbis: Function;
+}
 
-const DiretoryContainer: FC = () => {
-  console.log(mapStateToProps);
+const mapStateToProps = ({ ubiList }: StoreState) => {
+  return { ubiList };
+};
+
+const _DirectoryContainer: FC<AppProps> = ({ ubiList }) => {
+  console.log('mapStateToProps', ubiList);
   return (
     <div className={styles.wrapper}>
       <Link to="/">
         <MainButton label={'home'} />
       </Link>
       <SearchWrapper />
-      <IndexWrapper />
+      <IndexWrapper UbiList={ubiList} />
     </div>
   );
 };
 
-export default connect(mapStateToProps)(DiretoryContainer);
+export const DirectoryContainer = connect(mapStateToProps)(_DirectoryContainer);

@@ -1,3 +1,3 @@
 export interface IndexWrapperProps {
-  UBIScenarios?: Object;
+  UbiList?: Object;
 }
