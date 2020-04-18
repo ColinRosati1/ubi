@@ -1,3 +1,5 @@
+import { AxiosResponse } from 'axios';
+
 export enum ActionType {
   fetchRequest = 'UBI_FETCH_REQUESTED',
   fetchUbis = 'UBI_FETCH_SUCCEED',
@@ -23,7 +25,7 @@ export interface Ubi {
 
 export interface FetchUbisAction {
   type: ActionType;
-  payload: Ubi[];
+  payload: Promise<AxiosResponse<Ubi[]>> | string;
 }
 
 export type Action = FetchUbisAction;

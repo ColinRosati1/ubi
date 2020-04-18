@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios';
+import axios from 'axios';
 import { Ubi } from 'store/actions';
 
 const url = 'https://ubi-backend-nest.colinrosati1.now.sh/api/get-ubi';
