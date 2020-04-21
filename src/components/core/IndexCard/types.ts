@@ -2,7 +2,7 @@ export interface ItemCardProps {
   effects?: string;
   endDate?: string;
   funding?: string;
-  income?: string;
+  income?: object;
   incomeType?: string;
   isActive?: boolean;
   label?: string;

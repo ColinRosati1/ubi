@@ -1,6 +1,7 @@
-import { Ubi, Action, ActionType } from 'store/actions';
+import { Action, ActionType } from 'store/actions';
+import { initialState } from '.';
 
-export const ubiReducer = (state: Ubi[] = [], action: Action) => {
+export const ubiReducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.fetchRequest:
       return action.payload;

@@ -8,7 +8,7 @@
   padding: 5rem;
   margin-bottom: 3rem;
   box-shadow: 0 -3px 4px rgba($tunaBlack, 0.1);
-  background: $white;
+  background: #f1f1f1;
   color: $redPrimary;
   z-index: 100;
   font-weight: 500;
@@ -26,6 +26,14 @@
   text-transform: uppercase;
 }
 
+.headWrapper {
+  width: 100%;
+}
+
+.active {
+  background: $white;
+}
+
 .dates {
   align-self: center;
   display: inline-flex;
@@ -39,6 +47,9 @@
     padding: 1rem 2rem;
     color: $white;
     padding-right: 9rem;
+    &:hover {
+      color: $redPrimary;
+    }
   }
   > .item:first-child {
     padding-right: 9rem;

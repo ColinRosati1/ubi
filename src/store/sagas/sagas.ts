@@ -5,7 +5,6 @@ import { fetchUbiList } from './apis';
 function* fetchUbi() {
   try {
     const data = yield call(fetchUbiList);
-    console.log(data);
     yield put<FetchUbisAction>({
       type: ActionType.fetchUbis,
       payload: data,

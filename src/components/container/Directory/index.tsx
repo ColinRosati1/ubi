@@ -12,23 +12,23 @@ import { StoreState } from 'store/reducers';
 import { Ubi } from 'store/actions';
 
 interface AppProps {
-  ubiList: Ubi;
+  ubiList: Ubi[];
+  ubiFilter: Ubi[];
   fetchUbis: Function;
 }
 
-const mapStateToProps = ({ ubiList }: StoreState) => {
-  return { ubiList };
+const mapStateToProps = ({ ubiList, ubiFilter }: StoreState) => {
+  return { ubiList, ubiFilter };
 };
 
-const _DirectoryContainer: FC<AppProps> = ({ ubiList }) => {
-  console.log('mapStateToProps', ubiList);
+const _DirectoryContainer: FC<AppProps> = () => {
   return (
     <div className={styles.wrapper}>
       <Link to="/">
         <MainButton label={'home'} />
       </Link>
       <SearchWrapper />
-      <IndexWrapper UbiList={ubiList} />
+      <IndexWrapper />
     </div>
   );
 };

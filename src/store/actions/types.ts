@@ -4,6 +4,7 @@ export enum ActionType {
   fetchRequest = 'UBI_FETCH_REQUESTED',
   fetchUbis = 'UBI_FETCH_SUCCEED',
   fetchUbiFailed = 'UBI_FETCH_FAILED',
+  ubiFilter = 'UBI_FILTER',
 }
 
 export interface Ubi {
@@ -11,10 +12,12 @@ export interface Ubi {
   effects?: string;
   endDate?: string;
   funding?: string;
-  income?: string;
+  income?: object;
+  incomeAverage: number;
   incomeType?: string;
   isActive?: boolean;
   label?: string;
+  length: number;
   location?: string;
   organization?: string;
   sample?: string;

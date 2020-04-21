@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import classnames from 'classnames';
 
 import styles from './IndexCard.module.scss';
 import { ItemCardProps } from './types';
@@ -19,15 +20,19 @@ const IndexCard: FC<ItemCardProps> = ({
   startDate = 'start date',
   title = 'title',
 }) => {
-  console.log();
+  const incomes = Object.values(income);
+  const incomeAmount = incomes.length === 2 ? `${incomes[0]} - ${incomes[1]}` : `${incomes[0]}`;
+
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <h3 className={styles.title}>{title}</h3>
-        <MainButton label={'Money'} />
-      </div>
-      <div className={styles.body}>
-        <p className={styles.item}>{label}</p>
+    <div className={classnames(styles.wrapper, { [styles.active]: isActive })}>
+      <div className={styles.headWrapper}>
+        <div className={styles.header}>
+          <h3 className={styles.title}>{title}</h3>
+          <MainButton label={'Money'} />
+        </div>
+        <div className={styles.body}>
+          <p className={styles.item}>{label}</p>
+        </div>
       </div>
       <hr></hr>
       <div className={styles.body}>
@@ -39,8 +44,8 @@ const IndexCard: FC<ItemCardProps> = ({
           <p className={styles.category}>Funding</p>
           <p>{funding}</p>
         </div>
-
-        <p>{income}</p>
+        <p>{location}</p>
+        <p>USD ${incomeAmount} / Month</p>
         <p>{incomeType}</p>
         <p>{effects}</p>
         <p>{sample}</p>
