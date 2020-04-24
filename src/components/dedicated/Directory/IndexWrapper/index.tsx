@@ -19,7 +19,7 @@ const IndexWrapper: FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      {!!ubiList.length ? <div>{filteredItems}</div> : <Loader />}
+      {!!ubiList.length ? <div className={styles.items}>{filteredItems}</div> : <Loader />}
     </div>
   );
 };
