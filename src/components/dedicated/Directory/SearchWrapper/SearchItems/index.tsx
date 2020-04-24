@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -11,30 +11,42 @@ import { ActionType, Ubi } from 'store/actions';
 import { sortLogic } from './sortLogic';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 250,
+    '& :hover': {
+      // borderBottom: '1px solid red',
+    },
+  },
+
+  selector: {
+    '& :after': {
+      borderBottom: '1px solid red',
+    },
   },
   selectEmpty: {
     marginTop: theme.spacing(5),
   },
 }));
 
-const averageIncome = (from: number, to: number | undefined): number => {
-  if (to === undefined) {
-    return from;
-  }
-  return from + to / 2;
-};
-
 const SearchItems: FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const ubi: Ubi[] = useSelector(state => state.ubiList);
+  const [direction, setDirection] = useState(false);
   let filtered: Ubi[] = [];
 
+  const ascDes = direction ? 'Ascending' : 'Descending';
+
   const handleChange = (event: React.ChangeEvent<{ value: undefined }>): void => {
-    filtered = sortLogic(event.target.value, ubi);
+    setDirection(true);
+    filtered = sortLogic(event.target.value, ubi, direction);
     dispatch({ type: ActionType.ubiFilter, payload: filtered });
   };
 
@@ -42,7 +54,7 @@ const SearchItems: FC = () => {
     <div className={styles.wrapper}>
       <FormControl className={classes.formControl}>
         <InputLabel>Sort</InputLabel>
-        <Select native onChange={handleChange}>
+        <Select native onChange={handleChange} className={classes.selector}>
           <option aria-label="None" value="" />
           <option value={'Location'}>Location</option>
           <option value={'Length'}>Length</option>
@@ -51,8 +63,9 @@ const SearchItems: FC = () => {
         </Select>
       </FormControl>
       <Button variant="outlined" style={{ marginTop: '1rem' }}>
-        Search
+        {ascDes}
       </Button>
+      <p>Sort Universal Basic income</p>
     </div>
   );
 };

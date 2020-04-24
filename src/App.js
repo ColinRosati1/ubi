@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 
-import { DirectoryContainer } from './container/Directory';
+import { DirectoryContainer } from './components/container/Directory';
 import IndexBody from './components/dedicated/Index/IndexBody';
 
 

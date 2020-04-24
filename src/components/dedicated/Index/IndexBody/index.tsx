@@ -30,20 +30,17 @@ const backgroungText = [
 
 const colors = {
   Sea: '#a2ccb6',
-  Sand: '#fceeb5',
+  Sand: '#ebe1e0',
   Peach: '#ee786e',
   Black: '#000000',
 };
 
 const IndexBody: FC = () => {
-  const [color, setColor] = useState(colors.Sea);
-  useEffect(() => {
-    document.body.style.background = color;
-    document.body.style.transition = 'all 0.4s';
-    setTimeout(() => {
-      setColor('#ffffff');
-    }, 400);
-  }, [color]);
+  // const [color, setColor] = useState(colors.Sand);
+  // useEffect(() => {
+  //   document.body.style.background = color;
+  //   document.body.style.transition = 'all 0.4s';
+  // }, [color]);
 
   return (
     <div className={cx(styles.wrapper, 'index', styles.display)} id={'index'}>

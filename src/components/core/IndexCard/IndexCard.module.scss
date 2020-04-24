@@ -7,9 +7,9 @@
   width: 100%;
   padding: 5rem;
   margin-bottom: 3rem;
-  box-shadow: 0 -3px 4px rgba($tunaBlack, 0.1);
-  background: #f1f1f1;
-  color: $redPrimary;
+  box-shadow: 0 3px 4px rgba($tunaBlack, 0.1);
+  background: rgba($beachSand, 0.9);
+  color: $redPale;
   z-index: 100;
   font-weight: 500;
   .body {
@@ -31,7 +31,7 @@
 }
 
 .active {
-  background: $white;
+  background: rgba($beachSand, 0.2);
 }
 
 .dates {
@@ -66,7 +66,6 @@
 
 h3 {
   margin-top: 0;
-  align-self: center;
 }
 
 p {
@@ -75,6 +74,7 @@ p {
   text-transform: uppercase;
   font-size: 0.9rem;
   line-height: 3rem;
+  color: $redPale;
 }
 
 .item {
