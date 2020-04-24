@@ -1,6 +1,5 @@
 export const sortLogic = (action, ubi, direction): any => {
   let filtered = [];
-  let dir = direction ? `<` : `>`;
   switch (action) {
     case 'Location':
       filtered = ubi.sort((first, second) => {

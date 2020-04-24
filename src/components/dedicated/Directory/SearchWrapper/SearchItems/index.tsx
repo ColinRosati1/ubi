@@ -7,8 +7,9 @@ import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 
 import styles from './SearchItems.module.scss';
-import { ActionType, Ubi } from 'store/actions';
+import { ActionType } from 'store/actions';
 import { sortLogic } from './sortLogic';
+import { Ubi } from 'types';
 
 const useStyles = makeStyles(theme => ({
   root: {

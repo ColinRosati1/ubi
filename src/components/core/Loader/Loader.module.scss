@@ -1,0 +1,35 @@
+@import 'src/styles/colors';
+@import 'src/styles/mediaquerys';
+
+.loaderWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  @media (min-width: $large) {
+    width: 100%;
+  }
+}
+.loader {
+  border: 16px solid $redPale;
+  border-top: 16px solid $beachSand;
+  border-radius: 50%;
+  width: 63rem;
+  height: 63rem;
+  margin: auto;
+  animation: spin 2s linear infinite;
+  @media (min-width: $medium) {
+    margin: auto;
+    width: 45rem;
+    height: 45rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

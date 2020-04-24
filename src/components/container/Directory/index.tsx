@@ -7,8 +7,8 @@ import Header from 'components/dedicated/Directory/Header';
 import IndexWrapper from 'components/dedicated/Directory/IndexWrapper';
 import SearchWrapper from 'components/dedicated/Directory/SearchWrapper';
 
-import { StoreState } from 'store/reducers';
-import { Ubi } from 'store/actions';
+import { StoreState } from 'store/types';
+import { Ubi } from 'types';
 
 interface AppProps {
   ubiList: Ubi[];

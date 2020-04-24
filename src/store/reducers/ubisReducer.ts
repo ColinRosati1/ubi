@@ -1,5 +1,5 @@
 import { Action, ActionType } from 'store/actions';
-import { initialState } from '.';
+import { initialState } from 'store/types';
 
 export const ubiReducer = (state = initialState, action: Action) => {
   switch (action.type) {

@@ -1,3 +1,5 @@
+@import 'src/styles/colors';
+
 .wrapper {
   width: 100%;
   justify-content: center;
@@ -5,23 +7,4 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 1rem;
-}
-
-.loader {
-  border: 16px solid white; /* Light grey */
-  border-top: 16px solid #d0ff00; /* Blue */
-  border-radius: 50%;
-  width: 20rem;
-  height: 20rem;
-  animation: spin 2s linear infinite;
-  margin: 7rem;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

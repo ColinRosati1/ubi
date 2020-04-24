@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
@@ -19,7 +19,6 @@ const backgroungText = [
   's',
   'i',
   'c',
-  ' ',
   'i',
   'n',
   'c',
@@ -28,20 +27,7 @@ const backgroungText = [
   'e',
 ];
 
-const colors = {
-  Sea: '#a2ccb6',
-  Sand: '#ebe1e0',
-  Peach: '#ee786e',
-  Black: '#000000',
-};
-
 const IndexBody: FC = () => {
-  // const [color, setColor] = useState(colors.Sand);
-  // useEffect(() => {
-  //   document.body.style.background = color;
-  //   document.body.style.transition = 'all 0.4s';
-  // }, [color]);
-
   return (
     <div className={cx(styles.wrapper, 'index', styles.display)} id={'index'}>
       {backgroungText.map((items, index) => {

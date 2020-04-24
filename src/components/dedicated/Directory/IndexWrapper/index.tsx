@@ -4,22 +4,20 @@ import { useSelector } from 'react-redux';
 import styles from './IndexWrapper.module.scss';
 
 import IndexCard from 'components/core/IndexCard';
-import { Ubi } from 'store/actions';
+import Loader from 'components/core/Loader';
+import { Ubi } from 'types';
 
 const IndexWrapper: FC = () => {
   const ubiFiltered: Ubi[] = useSelector(state => state.ubiFilter);
   const ubiList: Ubi[] = useSelector(state => state.ubiList);
   const _filtered = ubiFiltered.length === 0 ? ubiList : ubiFiltered;
-
-  return (
-    <div className={styles.wrapper}>
-      {!!ubiList.length ? (
-        Object.values(_filtered).map((item, index) => <IndexCard key={`${index}`} {...item} />)
-      ) : (
-        <div className={styles.loader}></div>
-      )}
-    </div>
+  const _body = !!ubiList.length ? (
+    Object.values(_filtered).map((item, index) => <IndexCard key={`${index}`} {...item} />)
+  ) : (
+    <Loader />
   );
+
+  return <div className={styles.wrapper}>{_body}</div>;
 };
 
 export default IndexWrapper;

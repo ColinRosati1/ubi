@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 
-import MainButton from 'components/core/MainButton';
-
 const Header: FC = () => {
   return (
     <div className={styles.wrapper}>
