@@ -55,7 +55,7 @@ const SearchItems: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.formWrapper}>
-        <FormControl className={classes.formControl}>
+        <FormControl className={styles.formControl}>
           <InputLabel>Sort</InputLabel>
           <Select native onChange={handleChange} className={classes.selector}>
             <option aria-label="None" value="" />
@@ -65,7 +65,7 @@ const SearchItems: FC = () => {
             <option value={'Active'}>Active</option>
           </Select>
         </FormControl>
-        <Button variant="outlined" style={{ marginTop: '1rem' }}>
+        <Button variant="outlined" style={{ marginTop: 'calc(1rem - 5px)', marginLeft: '1rem' }}>
           {ascDes}
         </Button>
       </div>

@@ -1,4 +1,5 @@
 @import 'src/styles/colors';
+@import 'src/styles/mediaquerys';
 
 .wrapper {
   width: 100%;
@@ -6,9 +7,13 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 1rem;
 }
 
 .items {
-  width: inherit;
+  width: 100%;
+  padding: 1rem 0;
+  @media (min-width: $medium) {
+    width: 100%;
+    padding: 1rem 0;
+  }
 }

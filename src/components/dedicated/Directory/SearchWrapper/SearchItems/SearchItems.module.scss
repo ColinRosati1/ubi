@@ -1,13 +1,25 @@
 @import 'src/styles/mixins';
+@import 'src/styles/mediaquerys';
 
 .wrapper {
   @include flexContainer(center, center, column);
-  width: 100%;
+  width: calc(100% - 4px);
   border: 2px solid black;
-  padding: 2rem;
 }
 
 .formWrapper {
   @include flexContainer(center, center);
-  padding-bottom: 1rem;
+  padding: 1rem;
+  width: calc(100% - 2rem);
+}
+
+.formControl {
+  width: 10rem;
+  @media (min-width: $medium) {
+    width: 25rem;
+  }
+}
+
+.formButton {
+  margin-top: calc(1rem - 5px);
 }

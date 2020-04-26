@@ -1,22 +1,29 @@
 @import 'src/styles/colors';
+@import 'src/styles/mediaquerys';
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: felx-start;
+  align-items: flex-start;
   width: 100%;
-  height: 10rem;
+  height: 100%;
   margin: auto;
   padding-bottom: 2rem;
   color: $redPale;
+  @media (min-width: $large) {
+    width: 100%;
+  }
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   letter-spacing: -0.02em;
   margin: 0.5rem 0;
   font-weight: 400;
   color: $redPale;
+  @media (min-width: $large) {
+    font-size: 4rem;
+  }
 }
 
 h3 {

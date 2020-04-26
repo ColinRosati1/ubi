@@ -3,25 +3,26 @@
 
 .loaderWrapper {
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 0;
   display: flex;
   @media (min-width: $large) {
     width: 100%;
+    top: 0;
   }
 }
 .loader {
   border: 16px solid $redPale;
   border-top: 16px solid $beachSand;
   border-radius: 50%;
-  width: 63rem;
-  height: 63rem;
+  width: 21.3rem;
+  height: 21.3rem;
   margin: auto;
   animation: spin 2s linear infinite;
   @media (min-width: $medium) {
     margin: auto;
-    width: 45rem;
-    height: 45rem;
+    width: 43rem;
+    height: 43rem;
   }
 }
 
