@@ -19,10 +19,36 @@
   height: 21.3rem;
   margin: auto;
   animation: spin 2s linear infinite;
-  @media (min-width: $medium) {
-    margin: auto;
-    width: 43rem;
-    height: 43rem;
+  @media (min-width: $xSmall) and (max-width: $small) {
+    // iphone 5
+    width: 18rem;
+    height: 18rem;
+  }
+  @media only screen and (min-width: $small) and (max-width: $lSmall) {
+    // iphone 6
+    width: 21rem;
+    height: 21rem;
+  }
+  @media only screen and (min-width: $sMedium) and (max-width: $medium) {
+    // iphone 6+
+    width: 23.5em;
+    height: 23.5rem;
+  }
+  @media (min-width: $lMedium) and (max-width: $sLarge) {
+    //ipad
+    width: 50rem;
+    height: 50rem;
+  }
+  @media (min-width: $sLarge) and (max-width: $large) {
+    //ipad+
+    width: 62rem;
+    height: 62rem;
+  }
+
+  @media (min-width: $large) {
+    // desktop
+    width: 45rem;
+    height: 45rem;
   }
 }
 

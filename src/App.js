@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { DirectoryContainer } from './components/container/Directory';
-import IndexBody from './components/dedicated/Index/IndexBody';
+import IndexBody from './components/dedicated/SplashPage';
 
 function App() {
   return (

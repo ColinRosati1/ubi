@@ -1,9 +1,19 @@
-$small: 360px;
-$medium: 415px;
-$large: 1000px;
+$xSmall: 320px;
+$small: 359px;
+$lSmall: 375px;
+$sMedium: 376px;
+$medium: 414px;
+$lMedium: 768px;
+$sLarge: 1024px;
+$large: 1025px;
+$xLarge: 1525px;
 
 :export {
+  xSmall: $xSmall;
   small: $small;
+  lSmall: $lSmall;
+  sMedium: $sMedium;
   medium: $medium;
   large: $large;
+  xLarge: $xLarge;
 }

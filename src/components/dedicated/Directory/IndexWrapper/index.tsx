@@ -6,7 +6,6 @@ import IndexCard from './IndexCard';
 
 import Loader from 'components/core/Loader';
 import { Ubi } from 'types';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const IndexWrapper: FC = () => {
   const ubiFiltered: Ubi[] = useSelector(state => state.ubiFilter);

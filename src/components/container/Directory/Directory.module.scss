@@ -7,7 +7,33 @@
   width: 22.5rem;
   overflow-x: hidden;
   margin: auto;
-  @media (min-width: $large) {
+  @media (min-width: $xSmall) and (max-width: $small) {
+    // iphone 5
+    width: 19.5rem;
+  }
+  @media only screen and (min-width: $small) and (max-width: $lSmall) {
+    // iphone 6
+    width: 23rem;
+  }
+  @media only screen and (min-width: $sMedium) and (max-width: $medium) {
+    // iphone 6+
+    width: 25rem;
+  }
+  @media (min-width: $lMedium) and (max-width: $sLarge) {
+    //ipad
+    width: 50rem;
+    padding: 1rem;
+  }
+  @media (min-width: $sLarge) and (max-width: $large) {
+    //ipad+
+    width: 58rem;
+  }
+  @media (min-width: $large) and (max-width: $xLarge) {
+    //ipad+
+    width: 58rem;
+  }
+  @media (min-width: $xLarge) {
+    // desktop
     width: 75rem;
     overflow: visible;
   }
