@@ -6,7 +6,9 @@ $medium: 414px;
 $lMedium: 768px;
 $sLarge: 1024px;
 $large: 1025px;
+$mLarge: 1285px;
 $xLarge: 1525px;
+$xxLarge: 2761px;
 
 :export {
   xSmall: $xSmall;
@@ -14,6 +16,8 @@ $xLarge: 1525px;
   lSmall: $lSmall;
   sMedium: $sMedium;
   medium: $medium;
+  sLarge: $sLarge;
+  mLarge: $mLarge;
   large: $large;
   xLarge: $xLarge;
 }

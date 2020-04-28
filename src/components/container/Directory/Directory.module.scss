@@ -24,18 +24,17 @@
     width: 50rem;
     padding: 1rem;
   }
-  @media (min-width: $sLarge) and (max-width: $large) {
+  @media (min-width: $large) and (max-width: $mLarge) {
     //ipad+
     width: 58rem;
   }
-  @media (min-width: $large) and (max-width: $xLarge) {
-    //ipad+
-    width: 58rem;
+  @media (min-width: $mLarge) and (max-width: $xLarge) {
+    //desktop
+    width: 80rem;
   }
-  @media (min-width: $xLarge) {
-    // desktop
-    width: 75rem;
-    overflow: visible;
+  @media (min-width: $xLarge) and (max-width: $xxLarge) {
+    //ipad+
+    width: 108rem;
   }
 }
 
