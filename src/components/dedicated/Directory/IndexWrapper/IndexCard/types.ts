@@ -1,5 +1,5 @@
 export interface ItemCardProps {
-  effects?: string;
+  effects?: string[];
   endDate?: string;
   funding?: string;
   income?: object;

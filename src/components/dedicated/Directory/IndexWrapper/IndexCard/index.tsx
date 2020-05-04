@@ -6,7 +6,7 @@ import { ItemCardProps } from './types';
 import MainButton from 'components/core/MainButton';
 
 const IndexCard: FC<ItemCardProps> = ({
-  effects = 'text',
+  effects = [''],
   endDate = 'end date',
   funding = 'text',
   income = '$number',
@@ -21,7 +21,17 @@ const IndexCard: FC<ItemCardProps> = ({
   title = 'title',
 }) => {
   const incomes = Object.values(income);
-  const incomeAmount = incomes.length === 2 ? `${incomes[0]} - ${incomes[1]}` : `${incomes[0]}`;
+  const incomeAmount =
+    incomes.length === 3
+      ? `${incomes[0]} - ${incomes[1]} / ${incomes[2]}`
+      : `${incomes[0]} / ${incomes[2]}`;
+  const effectsList = !!effects
+    ? effects.map((item, index) => (
+        <p key={index} className={styles.effects}>
+          {item}
+        </p>
+      ))
+    : '';
 
   return (
     <div className={classnames(styles.wrapper, { [styles.active]: isActive })}>
@@ -45,10 +55,10 @@ const IndexCard: FC<ItemCardProps> = ({
           <p>{funding}</p>
         </div>
         <p>{location}</p>
-        <p>USD ${incomeAmount} / Month</p>
+        <p>USD ${incomeAmount}</p>
         <p>{incomeType}</p>
-        <p>{effects}</p>
-        <p>{sample}</p>
+        <div>{effectsList}</div>
+        <p>Sample {sample}</p>
       </div>
       <div className={styles.dates}>
         <p className={styles.item}>{startDate}</p>

@@ -119,9 +119,12 @@ hr {
   p {
     width: 100%;
     margin-top: 0;
-    // margin: 0 auto;
   }
   @media (min-width: $medium) {
     width: 70%;
   }
+}
+
+.effects {
+  padding-top: 1rem;
 }

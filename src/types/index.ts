@@ -1,6 +1,6 @@
 export interface Ubi {
   id: number;
-  effects?: string;
+  effects?: string[];
   endDate?: string;
   funding?: string;
   income?: object;
