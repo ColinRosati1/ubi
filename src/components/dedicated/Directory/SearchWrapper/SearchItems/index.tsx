@@ -62,9 +62,6 @@ const SearchItems: FC = () => {
             <option value={'Active'}>Active</option>
           </Select>
         </FormControl>
-        <Button variant="outlined" style={{ marginTop: 'calc(1rem - 5px)', marginLeft: '1rem' }}>
-          {ascDes}
-        </Button>
       </div>
       <p>Sort Universal Basic income</p>
     </div>
