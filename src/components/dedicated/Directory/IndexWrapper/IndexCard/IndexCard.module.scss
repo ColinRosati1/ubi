@@ -21,13 +21,12 @@
     padding: 5rem;
     width: calc(100% - 10rem);
     max-width: 70rem;
-    box-shadow: 0 3px 4px rgba($tunaBlack, 0.1);
   }
 }
 
 .header {
-  width: 100%;
   @include flexContainer(center, space-between);
+  width: 100%;
   text-transform: uppercase;
 }
 
@@ -60,10 +59,9 @@
   > .item:first-child {
     padding-right: 0.5rem;
   }
+
   @media (min-width: $medium) {
-    min-width: 97%;
-    margin-top: 2rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     .item {
       padding-right: 9rem;
       padding: 1rem 2rem;
@@ -76,7 +74,7 @@
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -98,33 +96,50 @@ p {
   padding-bottom: 1.3rem;
 }
 
+.label {
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+  padding-bottom: 1.3rem;
+}
+
 hr {
   border: 1px solid $black;
   width: 100%;
 }
 
 .category {
-  margin: 0;
+  margin: auto;
   width: 20%;
   @media (min-width: $medium) {
-    margin-right: 2rem;
-    width: 25%;
+    margin: 0;
+    padding-bottom: 1rem;
+    width: calc(80% - 1rem);
+  }
+
+  h5 {
+    margin-bottom: 0.5rem;
   }
 }
 
 .categoryWrapper {
-  @include flexContainer(flex-start, space-between);
+  @include flexContainer(flex-start, space-between, column);
   width: 100%;
-  padding-bottom: 1rem;
   p {
     width: 100%;
-    margin-top: 0;
-  }
-  @media (min-width: $medium) {
-    width: 70%;
+    margin: 0;
   }
 }
 
 .effects {
   padding-top: 1rem;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
 }

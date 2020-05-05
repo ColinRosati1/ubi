@@ -1,15 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import styles from './IndexCard.module.scss';
 import { ItemCardProps } from './types';
 import MainButton from 'components/core/MainButton';
+import { formatIncome } from './util';
 
 const IndexCard: FC<ItemCardProps> = ({
   effects = [''],
-  endDate = 'end date',
+  date = {},
   funding = 'text',
-  income = '$number',
+  income = {},
   incomeType = 'text',
   isActive,
   label = ' label',
@@ -17,17 +18,13 @@ const IndexCard: FC<ItemCardProps> = ({
   organization = 'text',
   sample = 'text',
   sampleAge,
-  startDate = 'start date',
   title = 'title',
 }) => {
-  const incomes = Object.values(income);
-  const incomeAmount =
-    incomes.length === 3
-      ? `${incomes[0]} - ${incomes[1]} / ${incomes[2]}`
-      : `${incomes[0]} / ${incomes[2]}`;
+  const incomeAmount = formatIncome(income);
+
   const effectsList = !!effects
     ? effects.map((item, index) => (
-        <p key={index} className={styles.effects}>
+        <p className={styles.black} key={index}>
           {item}
         </p>
       ))
@@ -37,32 +34,44 @@ const IndexCard: FC<ItemCardProps> = ({
     <div className={classnames(styles.wrapper, { [styles.active]: isActive })}>
       <div className={styles.headWrapper}>
         <div className={styles.header}>
-          <h3 className={styles.title}>{title}</h3>
+          <div>
+            <h3 className={styles.title}>{title}</h3>
+            <p className={styles.black}>{location}</p>
+          </div>
           <MainButton label={'Money'} />
         </div>
         <div className={styles.body}>
-          <p className={styles.item}>{label}</p>
+          <p className={styles.label}>{label}</p>
         </div>
+        <hr />
       </div>
-      <hr></hr>
+
       <div className={styles.body}>
         <div className={styles.categoryWrapper}>
-          <p className={styles.category}>organization</p>
-          <p>{organization}</p>
+          <div className={styles.category}>
+            <h5>Organization</h5>
+            <p>{organization}</p>
+          </div>
+          <div className={styles.category}>
+            <h5>Funding</h5>
+            <p>{funding}</p>
+          </div>
+          <div className={styles.category}>
+            <h5>{incomeType}</h5>
+            <p>USD {incomeAmount}</p>
+          </div>
+          <div className={styles.category}>
+            <h5>Sample</h5>
+            <p> {sample}</p>
+            <p>{sampleAge}</p>
+          </div>
         </div>
-        <div className={styles.categoryWrapper}>
-          <p className={styles.category}>Funding</p>
-          <p>{funding}</p>
+
+        <div className={classnames(styles.effects, styles.black)}>{effectsList}</div>
+        <div className={styles.dates}>
+          <p className={styles.item}>{date.startDate}</p>
+          <p className={styles.item}>{date.endDate}</p>
         </div>
-        <p>{location}</p>
-        <p>USD ${incomeAmount}</p>
-        <p>{incomeType}</p>
-        <div>{effectsList}</div>
-        <p>Sample {sample}</p>
-      </div>
-      <div className={styles.dates}>
-        <p className={styles.item}>{startDate}</p>
-        <p className={styles.item}>{endDate}</p>
       </div>
     </div>
   );
