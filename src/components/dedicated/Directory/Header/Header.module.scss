@@ -1,4 +1,5 @@
 @import 'src/styles/colors';
+@import 'src/styles/mixins';
 @import 'src/styles/mediaquerys';
 
 .wrapper {
@@ -12,6 +13,15 @@
   color: $redPale;
   @media (min-width: $large) {
     width: 100%;
+  }
+}
+
+.headWrapper {
+  @include flexContainer(center, space-between, row);
+  width: 100%;
+
+  i {
+    font-size: 1.5rem;
   }
 }
 

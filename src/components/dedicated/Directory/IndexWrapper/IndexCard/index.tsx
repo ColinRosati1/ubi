@@ -1,5 +1,6 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
+import { Icon } from 'semantic-ui-react';
 
 import styles from './IndexCard.module.scss';
 import { ItemCardProps } from './types';
@@ -49,19 +50,26 @@ const IndexCard: FC<ItemCardProps> = ({
       <div className={styles.body}>
         <div className={styles.categoryWrapper}>
           <div className={styles.category}>
-            <h5>Organization</h5>
+            <h5 className={styles.categoryItem}>Organization</h5>
+            <Icon className={styles.categoryItem} name="folder open" />
             <p>{organization}</p>
           </div>
           <div className={styles.category}>
-            <h5>Funding</h5>
+            <h5 className={styles.categoryItem}>Funding</h5>
+            <Icon className={styles.categoryItem} name="gem outline" />
             <p>{funding}</p>
           </div>
           <div className={styles.category}>
-            <h5>{incomeType}</h5>
-            <p>USD {incomeAmount}</p>
+            <h5 className={styles.categoryItem}>{incomeType}</h5>
+            <Icon className={styles.categoryItem} name="lemon" />
+            <p>
+              <Icon name="money" />
+              USD {incomeAmount}
+            </p>
           </div>
           <div className={styles.category}>
-            <h5>Sample</h5>
+            <h5 className={styles.categoryItem}>Sample</h5>
+            <Icon className={styles.categoryItem} name="street view" />
             <p> {sample}</p>
             <p>{sampleAge}</p>
           </div>
@@ -69,8 +77,11 @@ const IndexCard: FC<ItemCardProps> = ({
 
         <div className={classnames(styles.effects, styles.black)}>{effectsList}</div>
         <div className={styles.dates}>
-          <p className={styles.item}>{date.startDate}</p>
-          <p className={styles.item}>{date.endDate}</p>
+          <div className={styles.flex}>
+            <p className={styles.item}>{date.startDate}</p>
+            <p className={styles.item}>{date.endDate}</p>
+          </div>
+          <Icon className={styles.dateIcon} name="calendar alternate outline" />
         </div>
       </div>
     </div>

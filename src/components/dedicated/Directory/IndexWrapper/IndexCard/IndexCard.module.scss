@@ -6,7 +6,6 @@
   @include flexContainer(flex-start, right, column);
   padding: 1rem;
   margin-bottom: 3rem;
-  width: calc(100% - 2rem);
   box-shadow: 0px 0px 8px rgba($tunaBlack, 0.22);
   background: rgba($beachSand, 0.9);
   color: $redPale;
@@ -19,8 +18,6 @@
   }
   @media (min-width: $medium) {
     padding: 5rem;
-    width: calc(100% - 10rem);
-    max-width: 70rem;
   }
 }
 
@@ -40,7 +37,7 @@
 
 .dates {
   align-self: center;
-  display: flex;
+  @include flexContainer(center, space-between, row);
   width: calc(100% - 2rem);
   margin-top: 2rem;
   padding: 0 1rem;
@@ -49,20 +46,24 @@
     border-top: 5px solid $white;
     border-left: 5px solid $white;
     padding: 1rem 2rem 1rem 1rem;
-    color: $white;
     padding-right: 2rem;
     margin: 1rem 0;
+    color: $white;
     &:hover {
       color: $redPrimary;
     }
   }
-  > .item:first-child {
-    padding-right: 0.5rem;
+  .dateIcon {
+    color: $white;
+    &:hover {
+      color: $redPrimary;
+    }
   }
 
   @media (min-width: $medium) {
     padding: 1rem 2rem;
     .item {
+      min-width: 15rem;
       padding-right: 9rem;
       padding: 1rem 2rem;
     }
@@ -72,6 +73,9 @@
   }
 }
 
+.flex {
+  @include flexContainer(center, center, row);
+}
 .title {
   margin: 0;
   font-size: 2rem;
@@ -119,8 +123,14 @@ hr {
   }
 
   h5 {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
   }
+}
+
+.categoryItem {
+  display: inline;
+  padding-right: 0.7rem;
 }
 
 .categoryWrapper {
