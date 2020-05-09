@@ -5,6 +5,9 @@
   @include flexContainer(center, center, column);
   width: calc(100% - 4px);
   border: 2px solid black;
+  p {
+    padding-bottom: 1rem;
+  }
 }
 
 .formWrapper {

@@ -21,18 +21,18 @@
   animation: spin 2s linear infinite;
   @media (min-width: $xSmall) and (max-width: $small) {
     // iphone 5
-    width: 18rem;
-    height: 18rem;
+    width: 22.7rem;
+    height: 22.7rem;
   }
   @media only screen and (min-width: $small) and (max-width: $lSmall) {
     // iphone 6
-    width: 21rem;
-    height: 21rem;
+    width: 26.5rem;
+    height: 26.5rem;
   }
   @media only screen and (min-width: $sMedium) and (max-width: $medium) {
     // iphone 6+
-    width: 23.5em;
-    height: 23.5rem;
+    width: 29em;
+    height: 29rem;
   }
   @media (min-width: $lMedium) and (max-width: $sLarge) {
     //ipad

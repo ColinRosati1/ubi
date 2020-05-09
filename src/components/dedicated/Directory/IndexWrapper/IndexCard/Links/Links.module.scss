@@ -1,0 +1,14 @@
+.wrapper {
+  width: 100%;
+}
+
+.linkDrawer {
+  max-height: 4rem;
+  overflow: hidden;
+  transition: max-height 1s linear;
+}
+
+.open {
+  max-height: 100%;
+  transition: max-height 5s linear;
+}

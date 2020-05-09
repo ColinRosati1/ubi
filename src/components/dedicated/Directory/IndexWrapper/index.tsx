@@ -14,13 +14,9 @@ const IndexWrapper: FC = () => {
   const filteredItems = Object.values(_filtered).map((item, index) => (
     <IndexCard key={`${index}`} {...item} />
   ));
-  // const _body = !!ubiList.length ? filteredItems : <Loader />;
+  const _body = !!ubiList.length ? filteredItems : <Loader />;
 
-  return (
-    <div className={styles.wrapper}>
-      {!!ubiList.length ? <div className={styles.items}>{filteredItems}</div> : <Loader />}
-    </div>
-  );
+  return <div className={styles.wrapper}>{_body}</div>;
 };
 
 export default IndexWrapper;

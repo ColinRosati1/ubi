@@ -1,12 +1,10 @@
 @import 'src/styles/colors';
 @import 'src/styles/mediaquerys';
+@import 'src/styles/mixins';
 
 .wrapper {
-  width: calc(100% - 2px);
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  @include flexContainer(center, center, column);
+  width: 100%;
 }
 
 .items {

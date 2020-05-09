@@ -9,15 +9,15 @@
   margin: auto;
   @media (min-width: $xSmall) and (max-width: $small) {
     // iphone 5
-    width: 19.5rem;
+    width: 21.5rem;
   }
   @media only screen and (min-width: $small) and (max-width: $lSmall) {
     // iphone 6
-    width: 23rem;
+    width: 25rem;
   }
   @media only screen and (min-width: $sMedium) and (max-width: $medium) {
     // iphone 6+
-    width: 25rem;
+    width: 28rem;
   }
   @media (min-width: $lMedium) and (max-width: $sLarge) {
     //ipad

@@ -4,21 +4,20 @@
 
 .wrapper {
   @include flexContainer(flex-start, right, column);
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin-bottom: 3rem;
   box-shadow: 0px 0px 8px rgba($tunaBlack, 0.22);
   background: rgba($beachSand, 0.9);
   color: $redPale;
-  z-index: 100;
-  font-weight: 500;
-  .body {
-    width: 100%;
-    font-size: 1.5rem;
-    padding: 3rem 0 0;
+  width: 99%;
+  @media (min-width: $lMedium) {
+    padding: 5rem 4rem;
   }
-  @media (min-width: $medium) {
-    padding: 5rem;
-  }
+}
+.body {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 3rem 0 0;
 }
 
 .header {
@@ -35,47 +34,6 @@
   background: rgba($beachSand, 0.2);
 }
 
-.dates {
-  align-self: center;
-  @include flexContainer(center, space-between, row);
-  width: calc(100% - 2rem);
-  margin-top: 2rem;
-  padding: 0 1rem;
-  background: $black;
-  .item {
-    border-top: 5px solid $white;
-    border-left: 5px solid $white;
-    padding: 1rem 2rem 1rem 1rem;
-    padding-right: 2rem;
-    margin: 1rem 0;
-    color: $white;
-    &:hover {
-      color: $redPrimary;
-    }
-  }
-  .dateIcon {
-    color: $white;
-    &:hover {
-      color: $redPrimary;
-    }
-  }
-
-  @media (min-width: $medium) {
-    padding: 1rem 2rem;
-    .item {
-      min-width: 15rem;
-      padding-right: 9rem;
-      padding: 1rem 2rem;
-    }
-    > .item:first-child {
-      padding-right: 9rem;
-    }
-  }
-}
-
-.flex {
-  @include flexContainer(center, center, row);
-}
 .title {
   margin: 0;
   font-size: 2rem;
@@ -114,12 +72,10 @@ hr {
 }
 
 .category {
-  margin: auto;
-  width: 20%;
+  margin: 0;
+  width: calc(80% - 1rem);
   @media (min-width: $medium) {
-    margin: 0;
     padding-bottom: 1rem;
-    width: calc(80% - 1rem);
   }
 
   h5 {

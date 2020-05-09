@@ -4,12 +4,13 @@ import { Icon } from 'semantic-ui-react';
 
 import styles from './IndexCard.module.scss';
 import { ItemCardProps } from './types';
-import MainButton from 'components/core/MainButton';
+import Links from './Links';
 import { formatIncome } from './util';
+import Dates from './Dates';
 
 const IndexCard: FC<ItemCardProps> = ({
   effects = [''],
-  date = {},
+  date,
   funding = 'text',
   income = {},
   incomeType = 'text',
@@ -19,6 +20,7 @@ const IndexCard: FC<ItemCardProps> = ({
   organization = 'text',
   sample = 'text',
   sampleAge,
+  src = [],
   title = 'title',
 }) => {
   const incomeAmount = formatIncome(income);
@@ -39,7 +41,6 @@ const IndexCard: FC<ItemCardProps> = ({
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.black}>{location}</p>
           </div>
-          <MainButton label={'Money'} />
         </div>
         <div className={styles.body}>
           <p className={styles.label}>{label}</p>
@@ -76,14 +77,10 @@ const IndexCard: FC<ItemCardProps> = ({
         </div>
 
         <div className={classnames(styles.effects, styles.black)}>{effectsList}</div>
-        <div className={styles.dates}>
-          <div className={styles.flex}>
-            <p className={styles.item}>{date.startDate}</p>
-            <p className={styles.item}>{date.endDate}</p>
-          </div>
-          <Icon className={styles.dateIcon} name="calendar alternate outline" />
-        </div>
+        {/* <Dates startDate={date.startDate} endDate={date.endDate} /> */}
+        <Dates {...date} />
       </div>
+      <Links source={src} />
     </div>
   );
 };

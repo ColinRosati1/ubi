@@ -17,10 +17,11 @@
 }
 
 .headWrapper {
-  @include flexContainer(center, space-between, row);
+  @include flexContainer(null, space-between, row);
   width: 100%;
 
   i {
+    margin-top: 1rem;
     font-size: 1.5rem;
   }
 }
