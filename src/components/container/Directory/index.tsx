@@ -6,6 +6,7 @@ import styles from './Directory.module.scss';
 import Header from 'components/dedicated/Directory/Header';
 import IndexWrapper from 'components/dedicated/Directory/IndexWrapper';
 import SearchWrapper from 'components/dedicated/Directory/SearchWrapper';
+import FadeTransition from 'components/core/FadeTransition';
 
 import { StoreState } from 'store/types';
 import { Ubi } from 'types';
@@ -15,10 +16,6 @@ interface AppProps {
   ubiFilter: Ubi[];
   fetchUbis: Function;
 }
-
-const mapStateToProps = ({ ubiList, ubiFilter }: StoreState) => {
-  return { ubiList, ubiFilter };
-};
 
 const _DirectoryContainer: FC<AppProps> = () => {
   return (
@@ -30,4 +27,8 @@ const _DirectoryContainer: FC<AppProps> = () => {
   );
 };
 
-export const DirectoryContainer = connect(mapStateToProps)(_DirectoryContainer);
+const mapStateToProps = ({ ubiList, ubiFilter }: StoreState) => {
+  return { ubiList, ubiFilter };
+};
+
+export const DirectoryContainer = connect(mapStateToProps)(FadeTransition(_DirectoryContainer));

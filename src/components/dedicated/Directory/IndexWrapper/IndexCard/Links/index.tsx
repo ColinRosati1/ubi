@@ -1,34 +1,37 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { MouseEvent, useRef } from 'react';
 import { Icon } from 'semantic-ui-react';
-import classnames from 'classnames';
 
 import styles from './Links.module.scss';
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
 
 const Links = ({ source }) => {
-  const [drawer, setDrawer] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
   const handleDrawer = (event: MouseEvent<HTMLDivElement | HTMLElement>): void => {
-    setDrawer(!drawer);
+    const linkHeight = source.length * 50 + 34;
+    if (typeof drawerRef.current === 'object') {
+      const drawerWrap = drawerRef.current;
+      const drawerHeightToggle = drawerWrap.clientHeight === 34 ? `${linkHeight}px` : '34px';
+      drawerWrap.style.height = drawerHeightToggle;
+      drawerWrap.style.transition = 'all 0.5s';
+    }
   };
 
   const renderLinks = () => {
-    const _links = !!source ? (
-      <div onClick={handleDrawer} className={classnames(styles.linkDrawer, drawer && styles.open)}>
+    const _links = !!source.length && (
+      <div ref={drawerRef} className={styles.linkDrawer}>
+        <div style={{ width: '100%', padding: '1rem' }} onClick={handleDrawer}>
+          <Icon className="linkify" />
+        </div>
         <List component="nav" aria-label="mailbox folders">
           {source.map((item, index) => (
-            // <a href={item} key={index}>
-            <ListItem button>
-              <Icon className="linkify" />
-              <Divider orientation="vertical" flexItem style={{ marginRight: '0.5rem' }} />
-              <ListItemText primary={`${index + 1}`} />
-            </ListItem>
-            // </a>
+            <a href={item} key={index}>
+              <ListItem button>
+                <Divider orientation="vertical" flexItem style={{ marginRight: '0.5rem' }} />
+                <ListItemText primary={`${index + 1}`} />
+              </ListItem>
+            </a>
           ))}
         </List>
-      </div>
-    ) : (
-      <div>
-        <hr />
       </div>
     );
     return _links;

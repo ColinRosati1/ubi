@@ -1,0 +1,12 @@
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: all 2s;
+}
+
+.wrapper {
+  width: 99%;
+}

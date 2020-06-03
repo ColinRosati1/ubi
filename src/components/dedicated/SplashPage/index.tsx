@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import cx from 'classnames';
 
 import styles from './SplashPage.module.scss';
+import FadeTransition from 'components/core/FadeTransition';
 
 const backgroungText = [
   'U',
@@ -29,7 +29,7 @@ const backgroungText = [
 
 const IndexBody: FC = () => {
   return (
-    <div className={cx(styles.wrapper, 'index', styles.display)} id={'index'}>
+    <div className={styles.wrapper}>
       {backgroungText.map((items, index) => {
         return (
           <Link to="/directory" key={`color--${index}`}>
@@ -41,4 +41,4 @@ const IndexBody: FC = () => {
   );
 };
 
-export default IndexBody;
+export default FadeTransition(IndexBody);

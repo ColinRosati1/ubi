@@ -3,12 +3,13 @@
 }
 
 .linkDrawer {
-  max-height: 4rem;
+  height: 34px;
   overflow: hidden;
-  transition: max-height 1s linear;
+  transition: all 0.4s linear;
 }
 
 .open {
-  max-height: 100%;
-  transition: max-height 5s linear;
+  // height: 10rem;
+  height: calc(100% - 1px);
+  transition: all 1s linear;
 }
