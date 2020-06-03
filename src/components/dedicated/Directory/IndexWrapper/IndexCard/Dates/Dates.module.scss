@@ -16,8 +16,10 @@
     padding-right: 2rem;
     margin: 1rem 0;
     color: $white;
+    transition: color 0.3s;
     &:hover {
       color: $redPrimary;
+      transition: color 0s;
     }
   }
   .dateIcon {

@@ -1,5 +1,6 @@
 import React, { MouseEvent, useRef } from 'react';
 import { Icon } from 'semantic-ui-react';
+import cx from 'classnames';
 
 import styles from './Links.module.scss';
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
@@ -19,8 +20,8 @@ const Links = ({ source }) => {
   const renderLinks = () => {
     const _links = !!source.length && (
       <div ref={drawerRef} className={styles.linkDrawer}>
-        <div style={{ width: '100%', padding: '1rem' }} onClick={handleDrawer}>
-          <Icon className="linkify" />
+        <div className={styles.iconWrapper} onClick={handleDrawer}>
+          <Icon className={cx('linkify')} />
         </div>
         <List component="nav" aria-label="mailbox folders">
           {source.map((item, index) => (

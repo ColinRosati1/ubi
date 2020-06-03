@@ -13,3 +13,13 @@
   height: calc(100% - 1px);
   transition: all 1s linear;
 }
+
+.iconWrapper {
+  width: 100%;
+  padding: 1rem;
+  transition: color 0.3s;
+  &:hover {
+    color: black;
+    transition: color 0s;
+  }
+}

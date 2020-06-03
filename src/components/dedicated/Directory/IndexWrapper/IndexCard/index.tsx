@@ -77,7 +77,6 @@ const IndexCard: FC<ItemCardProps> = ({
         </div>
 
         <div className={classnames(styles.effects, styles.black)}>{effectsList}</div>
-        {/* <Dates startDate={date.startDate} endDate={date.endDate} /> */}
         <Dates {...date} />
       </div>
       <Links source={src} />
